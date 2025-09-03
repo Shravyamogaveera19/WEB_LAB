@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function validate(e) {
+        e.preventDefault();
+        const reg = document.getElementById("reg").value;
+        const sub = document.getElementById("sub").value;
+        const t1 = parseFloat(document.getElementById("t1").value);
+        const t2 = parseFloat(document.getElementById("t2").value);
+        const t3 = parseFloat(document.getElementById("t3").value);
+
+        if (reg === "") {
+          alert("Please enter your reg no");
+          return;
+        }
+        if (sub === "") {
+          alert("Please enter valid subject code");
+          return;
+        }
+        if (
+          isNaN(t1) ||
+          t1 > 100 ||
+          t1 < 0 ||
+          isNaN(t2) ||
+          t2 > 100 ||
+          t2 < 0 ||
+          isNaN(t3) ||
+          t3 > 100 ||
+          t3 < 0
+        ) {
+          alert("Please enter valid test marks");
+          return;
+        }
+
+        let least = t1 < t2 ? t1 : t2;
+        least = least < t3 ? least : t3;
+        avg = (t1 + t2 + t3 - least) / 2;
+        alert("The best of two test marks is: " + avg);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <form onsubmit="validate(event)">
+        <p>Enter your register number</p>
+        <input type="text" id="reg" />
+        <p>Enter Subject code</p>
+        <input type="text" id="sub" />
+        <p>Enter marks of test1</p>
+        <input type="text" id="t1" />
+        <p>Enter marks of test2</p>
+        <input type="text" id="t2" />
+        <p>Enter marks of test3</p>
+        <input type="text" id="t3" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
