@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      function validate() {
-        //e.preventDefault();
+      function validate(e) {
+        e.preventDefault();
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
         const mobile = document.getElementById("mobile").value;
         const gender = document.getElementById("gender").value;
         const color = document.getElementById("color").value;
+        const text = document.getElementById("text");
 
         if (name === "") {
           alert("Please enter your name");
@@ -46,13 +47,14 @@
           "\ncolor:" +
           color;
         alert(output);
+        text.value = output;
       }
     </script>
   </head>
 
   <body>
     <div>
-      <form>
+      <form onsubmit="validate(event)">
         <p>Enter your name</p>
         <input type="text" id="name" />
         <p>Enter email-id</p>
@@ -68,8 +70,9 @@
         </div>
         <p>Enter favourite color</p>
         <input type="text" id="color" />
-        <button onclick="validate()">Submit</button>
+        <button typr="submit">Submit</button>
       </form>
+      <textarea name="result" id="text" style="height:100px;"></textarea>
     </div>
   </body>
 </html>
