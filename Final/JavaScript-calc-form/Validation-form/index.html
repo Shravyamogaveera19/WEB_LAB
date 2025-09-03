@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function validate() {
+        //e.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const mobile = document.getElementById("mobile").value;
+        const gender = document.getElementById("gender").value;
+        const color = document.getElementById("color").value;
+
+        if (name === "") {
+          alert("Please enter your name");
+          return;
+        }
+        if (email === "" || !email.includes("@") || !email.includes(".")) {
+          alert("Please enter valid emailid");
+          return;
+        }
+        if (mobile.length !== 10 || isNaN(mobile)) {
+          alert("Please enter valid mobile number");
+          return;
+        }
+        if (gender === "") {
+          alert("Please select a gender");
+          return;
+        }
+        if (color === "") {
+          alert("Please enter a color");
+          return;
+        }
+
+        output =
+          "Name:" +
+          name +
+          "\nemail:" +
+          email +
+          "\nmobile:" +
+          mobile +
+          "\ngender:" +
+          gender +
+          "\ncolor:" +
+          color;
+        alert(output);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <form>
+        <p>Enter your name</p>
+        <input type="text" id="name" />
+        <p>Enter email-id</p>
+        <input type="email" id="email" />
+        <p>Enter Mobile-No</p>
+        <input type="number" id="mobile" />
+        <div>
+          <select id="gender">
+            <option value="">Select Gender</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+          </select>
+        </div>
+        <p>Enter favourite color</p>
+        <input type="text" id="color" />
+        <button onclick="validate()">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

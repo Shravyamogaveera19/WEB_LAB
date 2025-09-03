@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+    <script>
+        window.onload = function(){
+            document.getElementById("input1").value = "";
+            document.getElementById("input2").value = "";
+        }
+        const add = () =>{
+        let num1 = parseFloat(document.getElementById("input1").value);
+        let num2 = parseFloat(document.getElementById("input2").value);
+        let result=document.getElementById('result');
+            let  x=  num1 + num2;
+            result.innerHTML = "Result :" + x;
+        }
+        const sub = () =>{
+        let num1 = parseFloat(document.getElementById("input1").value);
+        let num2 = parseFloat(document.getElementById("input2").value);
+        let result=document.getElementById('result');
+            let  x=  num1 - num2;
+            result.innerHTML = "Result :" + x;
+        }
+        const mul = () =>{
+        let num1 = parseFloat(document.getElementById("input1").value);
+        let num2 = parseFloat(document.getElementById("input2").value);
+        let result=document.getElementById('result');
+            let  x=  num1 * num2;
+            result.innerHTML = "Result :" + x;
+        }
+        const div = () =>{
+        let num1 = parseFloat(document.getElementById("input1").value);
+        let num2 = parseFloat(document.getElementById("input2").value);
+        let result=document.getElementById('result');
+            let  x=  num1 / num2;
+            result.innerHTML = "Result :" + x;
+        }
+        const AC = () =>{
+            document.getElementById("input1").value = "";
+            document.getElementById("input2").value = "";
+        }
+        const clearAll = () =>{
+            document.getElementById("input1").value = "";
+            document.getElementById("input2").value = "";
+            document.getElementById('result').innerHTML = "";
+            alert("Cleared all values");
+        }
+
+    </script>
+</head>
+<body style="display:flex;justify-content: center;margin-top:100px;">
+    <div class="container" style="border:1px solid black;width:20%;padding:20px;">
+        <p>Enter a number</p>
+        <input type="number" id="input1">
+        <p>Enter a number</p>
+        <input type="number" id="input2">
+        <div style="margin-top: 10px;margin-bottom: 10px;display:flex;gap:20px;">
+            <button onclick="add()">+</button>
+            <button onclick="sub()">-</button>
+            <button onclick="mul()">*</button>
+            <button onclick="div()">/</button>
+        </div>
+        <div id="result" style="font-size:30px"></div>
+        <div>
+            <button onclick="AC()">AC</button>
+            <button onclick="clearAll()">Clear</button>
+        </div>
+
+    </div>
+</body>
+</html>
