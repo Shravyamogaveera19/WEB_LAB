@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link{
+            color:blue;
+            text-decoration: none;
+        }
+        a:active{
+            color:green;
+            text-decoration: none;
+        }
+        a:hover{
+            color:yellow;
+            text-decoration: underline;
+        }
+        a:visited{
+            color:red;
+            text-decoration: underline;
+        }
+        .repetition{
+            background-image:url('https://thewowstyle.com/wp-content/uploads/2015/01/nature-images..jpg');
+            width:100%;
+            height:400px;
+            background-repeat: repeat;
+            background-size:200px;
+        }
+    </style>
+    <script>
+        const toggleVisibility = () =>{
+            const element = document.getElementById('toggle-element');
+            if(element.style.visibility == 'hidden'){
+                element.style.visibility = "visible";
+            }
+            else
+            {
+                element.style.visibility = "hidden";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h2>Font Style demo</h2>
+        <h3 style="font-family:Verdana;color:rgb(240, 163, 28);">This is Font 1</h3>
+        <h3 style="font-family:Times New Roman; color:aquamarine">This is Font 2</h3>
+    </div>
+    <div>
+        <h2>Repetition of an image</h2>
+        <div class="repetition"></div>
+    </div>
+    <div style="display:flex;flex-direction: column;">
+        <h2>Links Demo</h2>
+        <a href="https://google.com">Link 1</a>
+        <a href="https://google.com">Link 2</a>
+    </div>
+    <div>
+        <h2>Visibility of an element</h2>
+        <button onclick="toggleVisibility()">Toggle Visibility</button>
+        <div id="toggle-element">This element can be toggled with above button</div>
+    </div>
+</body>
+</html>
